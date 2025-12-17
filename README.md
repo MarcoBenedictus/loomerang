@@ -2,7 +2,7 @@ $\Huge\color{#ff88bf}\texttt{\textbf{Project Lead : }}$
 <br>
 Marco Benedictus Tirtaatmadja 202304560040
 
-$\color{#b19cd9}\textsf{\textit{Members :}}$
+$\Huge\color{#b19cd9}\textsf{\textit{Members :}}$
 <br>
 Leader Siahaan 202304560036
 <br>
