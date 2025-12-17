@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loomerangtoplogo"
+    tools:context=".login">
+
+    <Button
+        android:id="@+id/backbtnlogin"
+        android:layout_width="114dp"
+        android:layout_height="33dp"
+        android:backgroundTint="#285390"
+        android:text="Back"
+        android:textColorLink="@color/white"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:iconPadding="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/loginbtn"
+        app:layout_constraintStart_toStartOf="@+id/loginbtn"
+        app:layout_constraintTop_toBottomOf="@+id/loginbtn" />
+
+    <EditText
+        android:id="@+id/txtpasswordlogin"
+        android:layout_width="348dp"
+        android:layout_height="47dp"
+        android:background="@drawable/textboxoutline"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="text|textPassword"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/txtusernamelogin"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtusernamelogin"
+        app:layout_constraintTop_toBottomOf="@+id/txtnimlogin" />
+
+    <EditText
+        android:id="@+id/txtusernamelogin"
+        android:layout_width="348dp"
+        android:layout_height="47dp"
+        android:background="@drawable/textboxoutline"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.442" />
+
+    <EditText
+        android:id="@+id/txtnimlogin"
+        android:layout_width="348dp"
+        android:layout_height="47dp"
+        android:background="@drawable/textboxoutline"
+        android:ems="10"
+        android:hint="NIM"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/txtusernamelogin"
+        app:layout_constraintStart_toStartOf="@+id/txtusernamelogin"
+        app:layout_constraintTop_toBottomOf="@+id/txtusernamelogin" />
+
+    <Button
+        android:id="@+id/loginbtn"
+        android:layout_width="210dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#285390"
+        android:text="Login"
+        android:textColorLink="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:iconPadding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtpasswordlogin" />
+</androidx.constraintlayout.widget.ConstraintLayout>

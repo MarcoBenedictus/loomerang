@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loomerangtoplogo"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/registerbtnmain"
+        android:layout_width="210dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#285390"
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textColorLink="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:iconPadding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/loginbtnmain"
+        android:layout_width="210dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#285390"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textColorLink="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:iconPadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerbtnmain" />
+</androidx.constraintlayout.widget.ConstraintLayout>
