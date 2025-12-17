@@ -1,11 +1,13 @@
-Project Lead : 
-> Marco Benedictus Tirtaatmadja 202304560040
+$\Huge\color{#ff88bf}\texttt{\textbf{Project Lead : }}$
+<br>
+Marco Benedictus Tirtaatmadja 202304560040
 
-Members :
-> Leader Siahaan 202304560036
+$\color{#b19cd9}\textsf{\textit{Members :}}$
 <br>
-> Fatur Rahman Impung 202304560042
+Leader Siahaan 202304560036
 <br>
-> Blasius Oskar Rendi Febrianto 202304560041
+Fatur Rahman Impung 202304560042
 <br>
-> Andrew Winson Marcello 202304560037
+Blasius Oskar Rendi Febrianto 202304560041
+<br>
+Andrew Winson Marcello 202304560037
