@@ -13,6 +13,7 @@ public class loomoire extends AppCompatActivity {
     RecyclerView recyclerView;
     AppDatabase db;
     String currentUsername;
+    LoomoireAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +22,9 @@ public class loomoire extends AppCompatActivity {
 
         currentUsername = getIntent().getStringExtra("CURRENT_USERNAME");
 
-        // Header Setup (Logo, etc)
+        // Header
         ImageView btnBack = findViewById(R.id.btnBack);
-        if(btnBack != null) btnBack.setOnClickListener(v -> finish());
+        if (btnBack != null) btnBack.setOnClickListener(v -> finish());
 
         // RecyclerView Setup
         recyclerView = findViewById(R.id.recyclerViewLoomoire);
@@ -32,10 +33,20 @@ public class loomoire extends AppCompatActivity {
         // Load Data
         db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "loomerang-db").allowMainThreadQueries().build();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadData();
+    }
+
+    private void loadData() {
         List<FoundItem> items = db.foundItemDao().getAllItems();
 
-        LoomoireAdapter adapter = new LoomoireAdapter(this, items, db, currentUsername);
+        adapter = new LoomoireAdapter(this, items, db, currentUsername);
         recyclerView.setAdapter(adapter);
     }
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

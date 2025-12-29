@@ -49,3 +49,5 @@ public class NotificationActivity extends AppCompatActivity {
         }
     }
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

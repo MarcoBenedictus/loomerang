@@ -35,3 +35,5 @@ public class leaderboard extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#64B5F6"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <ImageView
+            android:id="@+id/ivHeaderLogo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/loomeranglogoinvis"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvPageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-black"
+            android:text="LAPOR PENEMUAN BARANG"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivHeaderLogo" />
+
+        <TextView
+            android:id="@+id/lblItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Nama Barang:"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPageTitle" />
+
+        <EditText
+            android:id="@+id/etItemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/textboxoutline"
+            android:hint="Contoh: Botol Tupperware Biru"
+            android:padding="15dp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@+id/lblItemName" />
+
+        <TextView
+            android:id="@+id/lblLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lokasi Ditemukan:"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etItemName" />
+
+        <EditText
+            android:id="@+id/etLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/textboxoutline"
+            android:hint="Contoh: Meja Kantin No. 4"
+            android:padding="15dp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@+id/lblLocation" />
+
+        <TextView
+            android:id="@+id/lblPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nomor Telepon / WA:"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etLocation" />
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/textboxoutline"
+            android:hint="08xxxxxxxxxx"
+            android:inputType="phone"
+            android:padding="15dp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@+id/lblPhone" />
+
+        <TextView
+            android:id="@+id/lblDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deskripsi Lengkap:"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPhone" />
+
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/textboxoutline"
+            android:gravity="top|start"
+            android:hint="Jelaskan kondisi barang..."
+            android:padding="15dp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@+id/lblDesc" />
+
+        <LinearLayout
+            android:id="@+id/layoutPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/etDescription">
+
+            <ImageButton
+                android:id="@+id/btnUploadPhoto"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/textboxoutline"
+                android:src="@android:drawable/ic_menu_camera"
+                android:scaleType="centerInside"
+                app:tint="#555555" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Upload Foto Barang\n(Optional)"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#1565C0"
+            android:text="SAVE CHANGES"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/layoutPhoto"
+            tools:layout_editor_absoluteX="24dp" />
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_menu_revert"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@android:color/white"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

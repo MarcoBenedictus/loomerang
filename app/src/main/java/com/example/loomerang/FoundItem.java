@@ -26,3 +26,5 @@ public class FoundItem {
         this.type = type;
     }
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

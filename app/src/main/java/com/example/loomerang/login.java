@@ -11,7 +11,7 @@ import androidx.room.Room;
 
 public class login extends AppCompatActivity {
 
-    EditText etUsername, etNim, etPassword;
+    EditText etUsername, etPassword;
     Button btnLogin, btnBack;
     AppDatabase db;
 
@@ -24,7 +24,6 @@ public class login extends AppCompatActivity {
                 AppDatabase.class, "loomerang-db").build();
 
         etUsername = findViewById(R.id.txtusernamelogin);
-        etNim = findViewById(R.id.txtnimlogin);
         etPassword = findViewById(R.id.txtpasswordlogin);
         btnLogin = findViewById(R.id.loginbtn);
         btnBack = findViewById(R.id.backbtnlogin);
@@ -48,16 +47,10 @@ public class login extends AppCompatActivity {
 
     private void performLogin() {
         String username = etUsername.getText().toString().trim();
-        String nim = etNim.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
 
-        if (username.isEmpty() || nim.isEmpty() || password.isEmpty()) {
+        if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if (!nim.matches("[0-9]+")) {
-            Toast.makeText(this, "NIM must contain only numbers!", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -72,9 +65,6 @@ public class login extends AppCompatActivity {
                         if (user == null) {
                             Toast.makeText(login.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
                         } else {
-                            if (!user.nim.equals(nim)) {
-                                Toast.makeText(login.this, "Wrong NIM for this user!", Toast.LENGTH_SHORT).show();
-                            } else {
                                 Toast.makeText(login.this, "Welcome, " + user.username, Toast.LENGTH_SHORT).show();
 
                                 Intent intent = new Intent(login.this, dashboard.class);
@@ -83,9 +73,10 @@ public class login extends AppCompatActivity {
                                 finish();
                             }
                         }
-                    }
                 });
             }
         }).start();
     }
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

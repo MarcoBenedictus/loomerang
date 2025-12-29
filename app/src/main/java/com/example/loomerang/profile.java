@@ -53,3 +53,5 @@ public class profile extends AppCompatActivity {
         }).start();
     }
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

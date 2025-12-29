@@ -16,3 +16,5 @@ public class settings extends AppCompatActivity {
 
     }
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

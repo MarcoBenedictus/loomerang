@@ -89,3 +89,5 @@ public class register extends AppCompatActivity {
         }).start();
     }
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

@@ -23,3 +23,5 @@ public class User {
         this.itemsFoundCount = 0;
     }
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

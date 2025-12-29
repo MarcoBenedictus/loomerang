@@ -123,3 +123,5 @@ public class ReportFound extends AppCompatActivity {
         });
     }
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

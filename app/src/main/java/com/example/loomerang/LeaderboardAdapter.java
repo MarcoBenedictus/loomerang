@@ -64,3 +64,5 @@ public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.
         }
     }
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

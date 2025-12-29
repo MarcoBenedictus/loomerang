@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Loomerang">
         <activity
+            android:name=".EditItemActivity"
+            android:exported="false" />
+        <activity
             android:name=".profile"
             android:exported="false" />
         <activity

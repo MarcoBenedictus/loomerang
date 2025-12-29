@@ -183,5 +183,6 @@ public class dashboard extends AppCompatActivity {
 
         builder.show();
     }
-
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

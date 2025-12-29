@@ -21,4 +21,9 @@ public interface UserDao {
 
     @androidx.room.Query("SELECT * FROM users ORDER BY itemsFoundCount DESC LIMIT 10")
     java.util.List<User> getTop10Users();
+
+    @Query("UPDATE users SET itemsFoundCount = itemsFoundCount - 1 WHERE username = :username")
+    void decrementPoints(String username);
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

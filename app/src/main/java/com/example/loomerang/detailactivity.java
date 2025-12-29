@@ -1,7 +1,9 @@
 package com.example.loomerang;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -14,6 +16,7 @@ public class detailactivity extends AppCompatActivity {
 
     AppDatabase db;
     String currentUserSending;
+    int itemId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +34,13 @@ public class detailactivity extends AppCompatActivity {
         TextView tvReporter = findViewById(R.id.tvDetailReporter);
         TextView tvLocation = findViewById(R.id.tvDetailLocation);
         TextView tvDesc = findViewById(R.id.tvDetailDesc);
-        Button btnNotify = findViewById(R.id.btnNotifyDetail); // Updated ID
+        Button btnNotify = findViewById(R.id.btnNotifyDetail);
+        Button btnEdit = findViewById(R.id.btnEdit);
+        Button btnDelete = findViewById(R.id.btnDelete);
+        android.view.View layoutOwner = findViewById(R.id.layoutOwnerActions);
         ImageButton btnBack = findViewById(R.id.btnBack);
+
+        itemId = getIntent().getIntExtra("ITEM_ID", -1);
 
         String item_name = getIntent().getStringExtra("ITEM_NAME");
         String item_desc = getIntent().getStringExtra("ITEM_DESC");
@@ -65,6 +73,16 @@ public class detailactivity extends AppCompatActivity {
             tvStatus.setTextColor(android.graphics.Color.parseColor("#69F0AE"));
         }
 
+        if (currentUserSending != null && currentUserSending.equals(reporter_username)) {
+            // YOU OWN THIS POST
+            btnNotify.setVisibility(View.GONE);
+            layoutOwner.setVisibility(View.VISIBLE);
+        } else {
+            // STRANGER
+            btnNotify.setVisibility(View.VISIBLE);
+            layoutOwner.setVisibility(View.GONE);
+        }
+
         btnBack.setOnClickListener(v -> finish());
 
         btnNotify.setOnClickListener(v -> {
@@ -95,5 +113,35 @@ public class detailactivity extends AppCompatActivity {
                 });
             }).start();
         });
+
+        // DELETE Logic
+        btnDelete.setOnClickListener(v -> {
+            new Thread(() -> {
+                if ("FOUND".equals(type)) {
+                    db.userDao().decrementPoints(reporter_username);
+                }
+
+                db.foundItemDao().deleteById(itemId);
+
+                runOnUiThread(() -> {
+                    Toast.makeText(this, "Post Deleted, your points have been deducted.", Toast.LENGTH_SHORT).show();
+                    finish();
+                });
+            }).start();
+        });
+
+        // EDIT Logic
+        btnEdit.setOnClickListener(v -> {
+            Intent intent = new Intent(detailactivity.this, EditItemActivity.class);
+            intent.putExtra("ID", itemId);
+            intent.putExtra("NAME", item_name);
+            intent.putExtra("DESC", item_desc);
+            intent.putExtra("LOC", item_loc);
+            intent.putExtra("IMG", imagePath);
+            startActivity(intent);
+            finish();
+        });
     }
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

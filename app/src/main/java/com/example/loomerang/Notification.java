@@ -20,3 +20,5 @@ public class Notification {
         this.itemName = itemName;
     }
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

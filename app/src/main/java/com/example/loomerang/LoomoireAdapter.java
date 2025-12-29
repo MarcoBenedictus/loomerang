@@ -99,6 +99,11 @@ public class LoomoireAdapter extends RecyclerView.Adapter<LoomoireAdapter.ViewHo
             intent.putExtra("ITEM_TYPE", item.type);
             intent.putExtra("ITEM_REPORTER", item.finderUsername);
             intent.putExtra("CURRENT_USER_SENDING", currentUser);
+            intent.putExtra("ITEM_IMAGE", item.imagePath);
+            intent.putExtra("ITEM_TYPE", item.type);
+            intent.putExtra("ITEM_REPORTER", item.finderUsername);
+            intent.putExtra("ITEM_ID", item.uid);
+            intent.putExtra("CURRENT_USER_SENDING", currentUser);
 
             context.startActivity(intent);
         });
@@ -125,3 +130,5 @@ public class LoomoireAdapter extends RecyclerView.Adapter<LoomoireAdapter.ViewHo
         }
     }
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

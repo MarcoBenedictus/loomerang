@@ -48,3 +48,5 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         }
     }
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

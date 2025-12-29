@@ -11,3 +11,5 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract FoundItemDao foundItemDao();
     public abstract NotificationDao notificationDao();
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus

@@ -16,3 +16,5 @@ public interface NotificationDao {
     @Query("SELECT COUNT(*) FROM notifications WHERE senderUsername = :sender AND recipientUsername = :recipient AND itemName = :item")
     int checkNotificationExists(String sender, String recipient, String item);
 }
+
+// Property of Marco - https://github.com/MarcoBenedictus
