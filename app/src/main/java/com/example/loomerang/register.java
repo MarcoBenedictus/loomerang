@@ -73,12 +73,24 @@ public class register extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                User existingUser = db.userDao().getUser(username);
+
+                if (existingUser != null) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(register.this, "Username already exists.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    return;
+                }
+
                 db.userDao().registerUser(newUser);
 
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(register.this, "Registration Successful!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(register.this, "Registration Successful.", Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(register.this, MainActivity.class);
                         startActivity(intent);

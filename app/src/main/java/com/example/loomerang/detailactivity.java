@@ -121,6 +121,8 @@ public class detailactivity extends AppCompatActivity {
                     db.userDao().decrementPoints(reporter_username);
                 }
 
+                db.notificationDao().deletePostNotifications(reporter_username, item_name);
+
                 db.foundItemDao().deleteById(itemId);
 
                 runOnUiThread(() -> {
